@@ -11,7 +11,8 @@ const PORT = 5000;
 app.use(bodyParser.json());
 
 // Database Connection
-mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URI)
+
   .then(() => console.log('Connected to MongoDB Atlas'))
   .catch(err => console.error(err));
 
